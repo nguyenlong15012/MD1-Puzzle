@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 800px;
+            height: 200px;
+            box-shadow: red 4px 4px 4px;
+        }
+    </style>
+</head>
+<body>
+<img id="image1" src="image/Cat1.jpg" alt="" onclick="changeImage1()"><br>
+<img id="image2" src="image/Gau2.jpg" alt="" onclick="changeImage2()"><br>
+<img id="image3" src="image/Khi3.jpg" alt="" onclick="changeImage3()"><br>
+<img id="image4" src="image/Cat4.jpg" alt="" onclick="changeImage4()">
+
+<script>
+
+    let image1 = document.getElementById('image1');
+    let count1 = 1;
+    let image2 = document.getElementById('image2');
+    let count2 = 2;
+    let image3 = document.getElementById('image3');
+    let count3 = 3;
+    let image4 = document.getElementById('image4');
+    let count4 = 4;
+
+
+    function changeImage1(){
+        count1++;
+        console.log('count1', count1)
+        if(count1 === 2){
+            console.log('c-----',count1)
+            image1.src = 'image/Gau1.jpg';
+        }else if(count1 === 3){
+            image1.src = 'image/Khi1.jpg';
+        }else {
+            count1 = 1;
+            image1.src = 'image/Cat1.jpg';
+        }
+        checkShadow()
+    }
+
+    function changeImage2(){
+        count2++;
+        console.log('Kt count2', count2)
+        if(count2 === 2){
+            image2.src = 'image/Gau2.jpg';
+        }else if(count2 === 3){
+            image2.src = 'image/Khi2.jpg';
+        }else {
+            count2 = 1;
+            image2.src = 'image/Cat2.jpg';
+        }
+        checkShadow()
+    }
+
+    function changeImage3(){
+        count3++;
+        console.log('Kt count3', count3)
+        if (count3 === 2){
+            image3.src = 'image/Gau3.jpg';
+        }else if (count3 === 3){
+            image3.src = 'image/Khi3.jpg';
+        }else{
+            count3 = 1;
+            image3.src = 'image/Cat3.jpg';
+        }
+        checkShadow()
+    }
+
+    function changeImage4(){
+        count4++;
+        console.log('Kt count4', count4)
+        if(count4 === 2){
+            image4.src = 'image/Gau4.jpg';
+        }else if (count4 === 3){
+            image4.src = 'image/Khi4.jpg';
+        }else {
+            count4 = 1;
+            image4.src = 'image/Cat4.jpg';
+        }
+        checkShadow()
+    }
+
+    function checkShadow(){
+        if(count1===count2&&count2===count3){
+            console.log('có đi vào k?')
+            image1.style.boxShadow = "green 5px 5px 6px"
+            image2.style.boxShadow = "green 5px 5px 6px"
+            image3.style.boxShadow = "green 5px 5px 6px"
+            image4.style.boxShadow = "green 5px 5px 6px"
+        }else {
+            image1.style.boxShadow = "yellow 5px 5px 6px"
+            image2.style.boxShadow = "yellow 5px 5px 6px"
+            image3.style.boxShadow = "yellow 5px 5px 6px"
+            image4.style.boxShadow = "yellow 5px 5px 6px"
+        }
+    }
+
+</script>
+
+</body>
+</html>
